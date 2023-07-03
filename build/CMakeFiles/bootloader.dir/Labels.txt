@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+C:/Embedded/Espressif/frameworks/BTL_KTVXL/build/CMakeFiles/bootloader
+C:/Embedded/Espressif/frameworks/BTL_KTVXL/build/CMakeFiles/bootloader.rule
+C:/Embedded/Espressif/frameworks/BTL_KTVXL/build/CMakeFiles/bootloader-complete.rule
+C:/Embedded/Espressif/frameworks/BTL_KTVXL/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
+C:/Embedded/Espressif/frameworks/BTL_KTVXL/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+C:/Embedded/Espressif/frameworks/BTL_KTVXL/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+C:/Embedded/Espressif/frameworks/BTL_KTVXL/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+C:/Embedded/Espressif/frameworks/BTL_KTVXL/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+C:/Embedded/Espressif/frameworks/BTL_KTVXL/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+C:/Embedded/Espressif/frameworks/BTL_KTVXL/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule

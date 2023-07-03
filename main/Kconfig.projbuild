@@ -1,0 +1,10 @@
+menu "Device in use" 
+
+    config NAME_DEVICE
+        string "Name Device"
+        default "AirSENSE_SPARC_LAB"
+        help
+            Name device.
+    
+
+endmenu

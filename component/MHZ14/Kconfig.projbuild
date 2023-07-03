@@ -1,0 +1,7 @@
+menu "MHZ14A configuration"
+    config MHZ14A_PWM_PIN
+        int "PWM GPIO Number"
+        default 15
+        help    
+            GPIO Number for PWM.
+endmenu

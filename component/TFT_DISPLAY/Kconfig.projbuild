@@ -1,0 +1,37 @@
+menu "TFT configuration" 
+    config TFT_PIN_NUM_LED
+        int "LED GPIO Number"
+        default 14
+        help
+            GPIO number for TFT LED.
+    config PIN_NUM_SCK
+        int "SCK GPIO Number"
+        default 18
+        help    
+            GPIO number for SPI SCK.
+    
+    config PIN_NUM_MOSI
+        int "MOSI GPIO Number"
+        default 19
+        help
+            GPIO number for SPI MOSI.
+
+    config TFT_PIN_NUM_DC
+        int "DC GPIO Number"
+        default 12
+        help      
+            GPIO number for TFT DC.
+
+    config TFT_PIN_NUM_RESET
+        int "Reset GPIO Number"
+        default 15
+        help    
+            GPIO number for TFT Reset.
+
+    config TFT_PIN_NUM_CS
+        int "TFT Pin CS Number"
+        default 13
+        help
+            GPIO number for TFT CS.
+    
+endmenu
