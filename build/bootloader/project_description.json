@@ -1,8 +1,8 @@
 {
     "project_name":       "bootloader",
     "project_path":       "C:/Embedded/Espressif/frameworks/esp-idf-v4.4.3/components/bootloader/subproject",
-    "build_dir":          "C:/Embedded/Espressif/frameworks/BTL_KTVXL/build/bootloader",
-    "config_file":        "C:/Embedded/Espressif/frameworks/BTL_KTVXL/sdkconfig",
+    "build_dir":          "C:/Embedded/Espressif/frameworks/Project-Microprocessors-ET3300/build/bootloader",
+    "config_file":        "C:/Embedded/Espressif/frameworks/Project-Microprocessors-ET3300/sdkconfig",
     "config_defaults":    "",
     "app_elf":            "bootloader.elf",
     "app_bin":            "bootloader.bin",

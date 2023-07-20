@@ -1,4 +1,4 @@
-# Install script for directory: C:/Embedded/Espressif/frameworks/BTL_KTVXL/component/lvgl_esp32_drivers
+# Install script for directory: C:/Embedded/Espressif/frameworks/Project-Microprocessors-ET3300/component/lvgl_esp32_drivers
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

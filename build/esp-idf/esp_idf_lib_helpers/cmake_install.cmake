@@ -1,4 +1,4 @@
-# Install script for directory: C:/Embedded/Espressif/frameworks/BTL_KTVXL/component/esp_idf_lib_helpers
+# Install script for directory: C:/Embedded/Espressif/frameworks/Project-Microprocessors-ET3300/component/esp_idf_lib_helpers
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Embedded/Espressif/frameworks/BTL_KTVXL/component/i2cdev
+# Install script for directory: C:/Embedded/Espressif/frameworks/Project-Microprocessors-ET3300/component/i2cdev
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

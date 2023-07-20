@@ -1,4 +1,4 @@
-# Install script for directory: C:/Embedded/Espressif/frameworks/BTL_KTVXL/component/PMS7003
+# Install script for directory: C:/Embedded/Espressif/frameworks/Project-Microprocessors-ET3300/component/PMS7003
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

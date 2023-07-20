@@ -23,8 +23,8 @@
 #include "mhz14a.h"
 
 /*---------------------------------- DEFINE ---------------------------------- */
-#define PERIOD_GET_DATA_FROM_SENSOR           (TickType_t)(10000 / portTICK_RATE_MS)
-#define PERIOD_SAVE_DATA_SENSOR_TO_SDCARD     (TickType_t)(5000 / portTICK_RATE_MS)
+#define PERIOD_GET_DATA_FROM_SENSOR           (TickType_t)(5000 / portTICK_RATE_MS)
+#define PERIOD_SAVE_DATA_SENSOR_TO_SDCARD     (TickType_t)(2500 / portTICK_RATE_MS)
 #define PERIOD_READ_DATA_SENSOR_FROM_SDCARD   (TickType_t)(120000/portTICK_RATE_MS)
 #define PERIOD_UPDATE_DATA_ON_SCREEN    (TickType_t)(1000 / portTICK_RATE_MS)
 
@@ -60,14 +60,15 @@ static char timeDisplayOnScreen[30];
 struct label_st label_to_display;
 
 void getDataFromSensor_task(void *parameters){
+    int64_t timestart, timeend;
     struct dataSensor_st dataSensorTemp;
     struct moduleError_st moduleErrorTemp;
     TickType_t task_lastWakeTime;
     task_lastWakeTime = xTaskGetTickCount();
-
     getDataFromSensor_semaphore = xSemaphoreCreateMutex();
     for(;;){
         if(xSemaphoreTake(getDataFromSensor_semaphore, portMAX_DELAY)){ //Take mutex
+            timestart = esp_timer_get_time();
             moduleErrorTemp.ds3231Error = ds3231_getEpochTime(&ds3231_device, &(dataSensorTemp.timeStamp));
 
             moduleErrorTemp.pms7003Error = pms7003_readData(indoor, &(dataSensorTemp.pm1_0), 
@@ -113,6 +114,8 @@ void getDataFromSensor_task(void *parameters){
             memset(&dataSensorTemp, 0, sizeof(struct dataSensor_st));
             memset(&moduleErrorTemp, 0, sizeof(struct moduleError_st));
             vTaskDelayUntil(&task_lastWakeTime,PERIOD_GET_DATA_FROM_SENSOR);
+            timeend = esp_timer_get_time();
+            ESP_LOGW(__func__, "Time to execute getDataFromSensor loop: %lld", timeend - timestart);
         }
     }
     
@@ -284,13 +287,12 @@ void app_main(void)
     //Sample Period 5000ms
     xTaskCreate(getDataFromSensor_task, "GetDataSensor", (1024 * 64), NULL, (BaseType_t)25, &getDataFromSensorTask_handle);
 
-    
-    //Creat task to update data on TFT screen
-    xTaskCreate(updateScreen_task, "Update data on screen", (1024*16), NULL, (BaseType_t)9, &updateScreenTask_handle);
+//Creat task to update data on TFT screen
+    xTaskCreate(updateScreen_task, "Update data on screen", (1024*16), NULL, (BaseType_t)10, &updateScreenTask_handle);
 
     // Create task to save data got from getDataFromSensor_task() to SD card (16Kb stack memory| priority 10)
     // Period 5000ms
-    xTaskCreate(saveDataSensorToSDcard_task, "SaveDataSensorToSDcard", (1024*16), NULL, (BaseType_t)10, &saveDataSensorToSDcardTask_handle);
+    xTaskCreate(saveDataSensorToSDcard_task, "SaveDataSensorToSDcard", (1024*16), NULL, (BaseType_t)9, &saveDataSensorToSDcardTask_handle);
 
     //Creat task to read data from SD card
     //xTaskCreate(readDataSensorFromSDcard_task, "ReadDataSensorFromSDcard",(1024*16), NULL, (BaseType_t)10, &readDataSensorFromSDcardTask_handle);

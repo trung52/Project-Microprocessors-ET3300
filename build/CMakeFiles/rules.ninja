@@ -1802,7 +1802,7 @@ rule C_STATIC_LIBRARY_LINKER____idf_lvgl_esp32_drivers_
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Embedded\Espressif\tools\cmake\3.23.1\bin\cmake.exe --regenerate-during-build -SC:\Embedded\Espressif\frameworks\BTL_KTVXL -BC:\Embedded\Espressif\frameworks\BTL_KTVXL\build
+  command = C:\Embedded\Espressif\tools\cmake\3.23.1\bin\cmake.exe --regenerate-during-build -SC:\Embedded\Espressif\frameworks\Project-Microprocessors-ET3300 -BC:\Embedded\Espressif\frameworks\Project-Microprocessors-ET3300\build
   description = Re-running CMake...
   generator = 1
 

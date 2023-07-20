@@ -1,4 +1,4 @@
-# Install script for directory: C:/Embedded/Espressif/frameworks/BTL_KTVXL/component/DS3231
+# Install script for directory: C:/Embedded/Espressif/frameworks/Project-Microprocessors-ET3300/component/DS3231
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

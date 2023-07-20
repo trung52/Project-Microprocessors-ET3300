@@ -1,4 +1,4 @@
-# Install script for directory: C:/Embedded/Espressif/frameworks/BTL_KTVXL/component/datamanager
+# Install script for directory: C:/Embedded/Espressif/frameworks/Project-Microprocessors-ET3300/component/datamanager
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
